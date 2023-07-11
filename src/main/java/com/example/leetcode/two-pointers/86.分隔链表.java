@@ -6,6 +6,8 @@
 
 // @lc code=start
 
+import com.example.leetcode.base.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -32,6 +34,7 @@ class Solution {
                 t2.next = temp;
                 t2 = t2.next;
             }
+            // 需要断开原有的节点链接
             ListNode tempNext = temp.next;
             temp.next = null;
             temp = tempNext;
