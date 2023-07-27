@@ -8,6 +8,7 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
         // 二分查找 sum 值
+        // 左右双指针
         int left = 0;
         int right = numbers.length - 1;
         while (left < right) {
