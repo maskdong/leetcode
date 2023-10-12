@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-
+import com.example.leetcode.base.ListNode;
 /**
  * Definition for singly-linked list.
  * public class ListNode {
