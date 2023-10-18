@@ -1,3 +1,5 @@
+package com.example.leetcode.backtracking;
+
 /*
  * @lc app=leetcode.cn id=78 lang=java
  *

@@ -1,3 +1,5 @@
+package com.example.leetcode.backtracking;
+
 /*
  * @lc app=leetcode.cn id=47 lang=java
  *
@@ -32,7 +34,7 @@ class Solution {
             if (used[i]) {
                 continue;
             }
-
+            // 新添加的剪枝逻辑，固定相同的元素在排列中的相对位置
             if (i > 0 && nums[i] == nums[i - 1] && used[i - 1]) {
                 continue;
             }
