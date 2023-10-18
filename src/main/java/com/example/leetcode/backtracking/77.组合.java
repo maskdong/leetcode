@@ -13,7 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 class Solution {
-    private List<List<Integer>> res = new ArrayList();
+    private List<List<Integer>> res = new ArrayList<>();
     private LinkedList<Integer> track = new LinkedList<>();
 
     public List<List<Integer>> combine(int n, int k) {

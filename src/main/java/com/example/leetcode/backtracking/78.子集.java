@@ -14,7 +14,7 @@ import java.util.List;
 class Solution {
 
     private List<List<Integer>> res = new LinkedList<>();
-    LinkedList<Integer> track = new LinkedList<>();
+    private LinkedList<Integer> track = new LinkedList<>();
 
     public List<List<Integer>> subsets(int[] nums) {
         backtrack(nums, 0);
