@@ -1,4 +1,4 @@
-package com.example.leetcode.Unknown;
+
 /*
  * @lc app=leetcode.cn id=704 lang=java
  *
