@@ -1,3 +1,5 @@
+package com.example.leetcode.array;
+
 /*
  * @lc app=leetcode.cn id=1 lang=java
  *
@@ -6,7 +8,6 @@
 
 // @lc code=start
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
