@@ -1,3 +1,5 @@
+package com.example.leetcode.array;
+
 /*
  * @lc app=leetcode.cn id=15 lang=java
  *
