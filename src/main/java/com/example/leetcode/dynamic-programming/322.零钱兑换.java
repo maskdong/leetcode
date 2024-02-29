@@ -51,21 +51,18 @@ class Solution {
 
     // 方法二，使用从底向上的dp方法
     public int coinChangeDP(int[] coins, int amount) {
-        if (amount == 0) {
-            return 0;
-        }
         int[] dp = new int[amount + 1];
+        // 给dp数组初始化，值都为amount+1
         Arrays.fill(dp, amount + 1);
 
+        // base case
         dp[0] = 0;
-        // 外层 for 循环在遍历所有状态的所有取值
         for (int i = 0; i < dp.length; i++) {
-            // 内层 for 循环在求所有选择的最小值
             for (int coin : coins) {
                 if (i - coin < 0) {
                     continue;
                 }
-                dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
+                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
             }
         }
 
