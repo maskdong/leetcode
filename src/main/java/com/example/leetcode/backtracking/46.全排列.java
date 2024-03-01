@@ -1,5 +1,7 @@
 package com.example.leetcode.backtracking;
 
+import java.util.ArrayList;
+
 /*
  * @lc app=leetcode.cn id=46 lang=java
  *
@@ -12,40 +14,40 @@ import java.util.LinkedList;
 import java.util.List;
 
 class Solution {
-    List<List<Integer>> res = new LinkedList<>();
-    LinkedList<Integer> track = new LinkedList<>();
+    List<List<Integer>> res = new ArrayList<>();
 
     public List<List<Integer>> permute(int[] nums) {
+        LinkedList<Integer> trace = new LinkedList<>();
         boolean[] used = new boolean[nums.length];
-        backtrack(nums, used);
 
+        backtrack(nums, trace, used);
         return res;
     }
 
     // 路径：记录在 track 中
     // 选择列表：nums 中不存在于 track 的那些元素（used[i] 为 false）
     // 结束条件：nums 中的元素全都在 track 中出现
-    public void backtrack(int[] nums, boolean[] used) {
-        if (track.size() == nums.length) {
-            // 满足结束条件:添加结果退出
-            res.add(new LinkedList<>(track));
+    public void backtrack(int[] nums, LinkedList<Integer> trace, boolean[] used) {
+        if (trace.size() == nums.length) {
+            res.add(new ArrayList<>(trace));
             return;
         }
 
-        for (int i = 0; i < nums.length; i++) {
+        for(int i=0; i<nums.length;i++){
+            // 排除不合法的选择
             if (used[i]) {
-                // 已经被使用
+                // nums[i] 已经在 track 中，跳过
                 continue;
             }
-            // 做选择
-            used[i] = true;
-            track.addLast(nums[i]);
-            // 进入下一层决策树
-            backtrack(nums, used);
 
-            // 撤销选择
+            // 选择
+            used[i] = true;
+            trace.add(nums[i]);
+            // 下一层决策
+            backtrack(nums, trace, used);
+            // 取消选择
             used[i] = false;
-            track.removeLast();
+            trace.removeLast();
         }
     }
 }

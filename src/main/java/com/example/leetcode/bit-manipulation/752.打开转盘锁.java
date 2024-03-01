@@ -13,44 +13,40 @@ import java.util.Set;
 
 class Solution {
     public int openLock(String[] deadends, String target) {
-
         Set<String> deads = new HashSet<>();
-        for (String deadend : deadends) {
-            deads.add(deadend);
+        for (String dead : deadends) {
+            deads.add(dead);
         }
-        // 记录已经穷举过的密码，防止走回头路
+        // 初始化
+        Queue<String> queue = new LinkedList<>();
         Set<String> visited = new HashSet<>();
-        Queue<String> q = new LinkedList<>();
-        // 从起点开始启动广度优先搜索
-        int step = 0;
-        q.offer("0000");
+
+        queue.offer("0000");
         visited.add("0000");
+        int step = 0;
 
-        while (!q.isEmpty()) {
-            // 开始每层遍历
-            int sz = q.size();
-
-            for (int i = 0; i < sz; i++) {
-                String cur = q.poll();
-
-                // 结束条件
-                if (deads.contains(cur)) {
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                String curStr = queue.poll();
+                if (deads.contains(curStr)) {
                     continue;
                 }
-                if (cur.equals(target)) {
+                if (curStr.equals(target)) {
                     return step;
                 }
-
                 for (int j = 0; j < 4; j++) {
-                    String plusStr = plusOne(cur, j);
-                    if (!visited.contains(plusStr)) {
-                        q.offer(plusStr);
-                        visited.add(plusStr);
+                    String plusOne = plusOne(curStr, j);
+                    if (!visited.contains(plusOne)) {
+                        // 新的组合
+                        visited.add(plusOne);
+                        queue.offer(plusOne);
                     }
-                    String minusString = minusOne(cur, j);
-                    if (!visited.contains(minusString)) {
-                        q.offer(minusString);
-                        visited.add(minusString);
+
+                    String minusOne = minusOne(curStr, j);
+                    if (!visited.contains(minusOne)) {
+                        visited.add(minusOne);
+                        queue.offer(minusOne);
                     }
                 }
             }

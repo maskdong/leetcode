@@ -31,29 +31,27 @@ class Solution {
         if (root == null) {
             return 0;
         }
-
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        // root 本身就是一层，depth 初始化为 1
         int depth = 1;
-        Queue<TreeNode> q = new LinkedList<>();
-        q.offer(root);
 
-        while (!q.isEmpty()) {
-            int sz = q.size();
-            // 开始遍历层里所有节点
+        while (!queue.isEmpty()) {
+            int sz = queue.size();
             for (int i = 0; i < sz; i++) {
-                TreeNode cur = q.poll();
-                if (cur.left == null && cur.right == null) {
-                    // 结果判断
+                // 判断是否到达叶子结点
+                TreeNode node = queue.poll();
+                if (node.left == null && node.right == null) {
+                    // 将下一层节点加入队列
                     return depth;
                 }
-
-                if (cur.left != null) {
-                    q.offer(cur.left);
+                if (node.left != null) {
+                    queue.offer(node.left);
                 }
-                if (cur.right != null) {
-                    q.offer(cur.right);
+                if (node.right != null) {
+                    queue.offer(node.right);
                 }
             }
-            // 遍历完一层，没有符合的结果
             depth++;
         }
         return depth;
