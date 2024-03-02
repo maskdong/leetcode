@@ -6,7 +6,7 @@
 
 // @lc code=start
 
-import com.example.leetcode.base.TreeNode;
+// import com.example.leetcode.base.TreeNode;
 
 /**
  * Definition for a binary tree node.
@@ -26,11 +26,11 @@ import com.example.leetcode.base.TreeNode;
 class Solution {
     public int maxDepth(TreeNode root) {
         // 1. 二叉树遍历方式
-        // traverse(root);
-        // return res;
+        traverse(root);
+        return res;
 
-        // 2. 分解子问题
-        return getMaxDepth(root);
+        // // 2. 分解子问题
+        // return getMaxDepth(root);
     }
 
     /*
@@ -46,24 +46,21 @@ class Solution {
     }
 
     /*
-     * 方法一 二叉树遍历
+     * 方法一 二叉树前序遍历
      */
-    int res = 0;
-    int depth = 0;
-
-    private void traverse(TreeNode root) {
-        if (root == null) {
+    int res =0;
+    int depth= 0;
+    private void traverse(TreeNode root){
+        if(root==null){
             return;
         }
 
-        // 前序位置，进入节点时操作
         depth++;
         res = Math.max(res, depth);
-
         traverse(root.left);
         traverse(root.right);
-        // 后续位置，出节点时执行
         depth--;
     }
+    
 }
 // @lc code=end

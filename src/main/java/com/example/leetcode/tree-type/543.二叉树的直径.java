@@ -24,12 +24,12 @@ import com.example.leetcode.base.TreeNode;
  * }
  */
 class Solution {
+    int res = 0;
+
     public int diameterOfBinaryTree(TreeNode root) {
         getMaxLen(root);
         return res;
     }
-
-    int res = 0;
 
     private int getMaxLen(TreeNode root) {
         if (root == null) {
@@ -42,6 +42,5 @@ class Solution {
         res = Math.max(res, leftLen + rightLen);
         return 1 + Math.max(leftLen, rightLen);
     }
-
 }
 // @lc code=end
