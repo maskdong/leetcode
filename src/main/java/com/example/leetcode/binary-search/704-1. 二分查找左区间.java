@@ -8,6 +8,7 @@
 // @lc code=start
 class Solution {
     public int searchLeft(int[] nums, int target) {
+        // 左右都闭
         int left = 0;
         int right = nums.length - 1;
 
