@@ -32,12 +32,12 @@ class Solution {
         return dummy.next;
     }
 
-    private ListNode findFromEnd(ListNode head, int k) {
-        ListNode fast = head;
-        for (int i = 0; i < k; i++) {
+    private ListNode findFromEnd(ListNode node, int n) {
+        ListNode slow = node;
+        ListNode fast = node;
+        for (int i = 0; i < n; i++) {
             fast = fast.next;
         }
-        ListNode slow = head;
         while (fast != null) {
             fast = fast.next;
             slow = slow.next;

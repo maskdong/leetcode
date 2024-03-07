@@ -24,35 +24,30 @@ class Solution {
 
     // 使用优先级队列 即二叉堆将 lists 先进行排序。
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists.length == 0) {
-            return null;
-        }
+         if (lists.length == 0) return null;
+        // 虚拟头结点
         ListNode dummy = new ListNode(-1);
-        ListNode temp = dummy;
-
+        ListNode p = dummy;
         // 优先级队列，最小堆
-        PriorityQueue<ListNode> pQueue = new PriorityQueue<>(lists.length, (a, b) -> (a.val - b.val));
-        
+        PriorityQueue<ListNode> pq = new PriorityQueue<>(
+            lists.length, (a, b)->(a.val - b.val));
         // 将 k 个链表的头结点加入最小堆
         for (ListNode head : lists) {
-            if (head != null) {
-                pQueue.add(head);
-            }
+            if (head != null)
+                pq.add(head);
         }
 
-        while (!pQueue.isEmpty()) {
+        while (!pq.isEmpty()) {
             // 获取最小节点，接到结果链表中
-            ListNode node = pQueue.poll();
-            temp.next = node;
-            temp = temp.next;
-            // 将未使用的 node 重新 add 到pQueue。
+            ListNode node = pq.poll();
+            p.next = node;
             if (node.next != null) {
-                pQueue.add(node.next);
+                pq.add(node.next);
             }
-
+            // p 指针不断前进
+            p = p.next;
         }
         return dummy.next;
-
     }
 
 }

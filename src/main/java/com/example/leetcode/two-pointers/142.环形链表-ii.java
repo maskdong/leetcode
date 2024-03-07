@@ -48,12 +48,12 @@ class Solution {
             return null;
         }
 
-        slow = head;
-        while (fast != slow) {
-            fast = fast.next;
+        ListNode find = head;
+        while (find != slow) {
+            find = find.next;
             slow = slow.next;
         }
-        return slow;
+        return find;
     }
 }
 // @lc code=end
