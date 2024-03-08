@@ -8,6 +8,7 @@
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
 
 class LFUCache {
     int minfreq, capacity;
