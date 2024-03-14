@@ -1,3 +1,5 @@
+package com.example.leetcode.tree;
+
 /*
  * @lc app=leetcode.cn id=144 lang=java
  *
