@@ -15,11 +15,11 @@ import java.util.List;
 
 class Solution {
     List<List<Integer>> res = new ArrayList<>();
+    LinkedList<Integer> trace = new LinkedList<>();
+    boolean[] used;
 
     public List<List<Integer>> permute(int[] nums) {
-        LinkedList<Integer> trace = new LinkedList<>();
-        boolean[] used = new boolean[nums.length];
-
+        used = new boolean[nums.length];
         backtrack(nums, trace, used);
         return res;
     }
@@ -33,7 +33,7 @@ class Solution {
             return;
         }
 
-        for(int i=0; i<nums.length;i++){
+        for (int i = 0; i < nums.length; i++) {
             // 排除不合法的选择
             if (used[i]) {
                 // nums[i] 已经在 track 中，跳过

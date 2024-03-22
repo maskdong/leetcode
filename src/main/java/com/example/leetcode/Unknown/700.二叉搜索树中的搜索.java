@@ -27,19 +27,19 @@ import com.example.leetcode.base.TreeNode;
  */
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
-        return traveres(root, val);
+        return traverse(root, val);
     }
 
-    private TreeNode traveres(TreeNode root, int target) {
+    private TreeNode traverse(TreeNode root, int target) {
         if (root == null) {
             return null;
         }
 
         if (target < root.val) {
-            return traveres(root.left, target);
+            return traverse(root.left, target);
         }
         if (target > root.val) {
-            return traveres(root.right, target);
+            return traverse(root.right, target);
         }
         return root;
     }

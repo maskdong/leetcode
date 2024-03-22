@@ -1,5 +1,7 @@
 package com.example.leetcode.backtracking;
 
+import java.util.ArrayList;
+
 /*
  * @lc app=leetcode.cn id=78 lang=java
  *
@@ -13,8 +15,9 @@ import java.util.List;
 
 class Solution {
 
-    private List<List<Integer>> res = new LinkedList<>();
-    private LinkedList<Integer> track = new LinkedList<>();
+    List<List<Integer>> res = new ArrayList<>();
+    // 记录回溯算法的递归路径
+    LinkedList<Integer> track = new LinkedList<>();
 
     public List<List<Integer>> subsets(int[] nums) {
         backtrack(nums, 0);
@@ -22,7 +25,7 @@ class Solution {
     }
 
     private void backtrack(int[] nums, int start) {
-        // 前序，每个子节点都是一个子集
+        // 前序位置，每个节点的值都是一个子集
         res.add(new LinkedList<>(track));
 
         // 回溯算法标准框架

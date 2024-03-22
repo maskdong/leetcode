@@ -29,7 +29,7 @@ class Solution {
 
         for (int i = start; i < nums.length; i++) {
             if (i > start && nums[i] == nums[i - 1]) {
-                // 统一level，相同的元素进行剪枝
+                // 同一level，相同的元素进行剪枝
                 continue;
             }
             // 选择
