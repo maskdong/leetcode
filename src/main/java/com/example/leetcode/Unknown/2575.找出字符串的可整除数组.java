@@ -31,7 +31,6 @@ class Solution {
         for (int i = 0; i < size; i++) {
             long num = Long.parseLong(word.substring(0,i+1));
             cur = num;
-            System.out.println(String.format("i:%s,num:%s", i, num));
             if (num % m == 0) {
                 res[i] = 1;
             } else {

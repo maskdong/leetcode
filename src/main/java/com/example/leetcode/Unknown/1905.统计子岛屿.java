@@ -1,3 +1,5 @@
+package com.example.leetcode.Unknown;
+
 /*
  * @lc app=leetcode.cn id=1905 lang=java
  *
