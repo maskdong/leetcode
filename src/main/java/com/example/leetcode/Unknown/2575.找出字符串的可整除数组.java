@@ -26,11 +26,9 @@ class Solution {
         // 不能使用long计算，在10次方的时候会溢出，要使用模运算
         int size = word.length();
         int[] res = new int[size];
-        long cur = 0;
 
         for (int i = 0; i < size; i++) {
             long num = Long.parseLong(word.substring(0,i+1));
-            cur = num;
             if (num % m == 0) {
                 res[i] = 1;
             } else {
