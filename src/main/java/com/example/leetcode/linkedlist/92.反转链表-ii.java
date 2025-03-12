@@ -1,3 +1,5 @@
+package com.example.leetcode.linkedlist;
+
 /*
  * @lc app=leetcode.cn id=92 lang=java
  *
