@@ -32,4 +32,15 @@ public class ListNode {
             System.out.print(cur.val + arrow);
         }
     }
+
+    // 构建链表
+    public static ListNode buildListNode(int[] nums) {
+        ListNode dummy = new ListNode(-1);
+        ListNode cur = dummy;
+        for (int num : nums) {
+            cur.next = new ListNode(num);
+            cur = cur.next;
+        }
+        return dummy.next;
+    }
 }
