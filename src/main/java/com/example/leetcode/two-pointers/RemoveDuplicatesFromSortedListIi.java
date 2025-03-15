@@ -34,6 +34,7 @@ public class RemoveDuplicatesFromSortedListIi {
 
             ListNode p = head;
             while (p != null) {
+                // 这里是关键，要判断 p 不等于下一个，同时 p 也不能等于前一个
                 if ((p.next != null && p.next.val == p.val)|| p.val == dup.val) {
                     dup.next = p;
                     dup = dup.next;
