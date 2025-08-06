@@ -8,7 +8,7 @@ package com.example.leetcode.array;
  */
 
 import java.util.*;
-import com.example.leetcode.base.*;
+
 
 public class FruitIntoBaskets {
 

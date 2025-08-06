@@ -1,3 +1,5 @@
+package com.example.leetcode.array;
+
 /*
  * @lc app=leetcode.cn id=378 lang=java
  * @lcpr version=30103
@@ -6,7 +8,7 @@
  */
 
 import java.util.*;
-import com.example.leetcode.base.*;
+
 
 public class KthSmallestElementInASortedMatrix {
 
