@@ -9,9 +9,7 @@ package com.example.leetcode.array;
 
 import java.util.*;
 
-
 public class FruitIntoBaskets {
-
     // @lc code=start
     class Solution {
         public int totalFruit(int[] fruits) {
